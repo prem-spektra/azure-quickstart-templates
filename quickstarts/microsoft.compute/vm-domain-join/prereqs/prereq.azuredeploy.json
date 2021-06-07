@@ -15,10 +15,6 @@
       "type": "string"
     }
 },
-    "variables": {
-        "adUsername": "[parameters('adminUsername')]",
-        "adPassword": "[parameters('adminPassword')]"
-    },
     "resources": [
         {
             "name": "createADController",
@@ -48,25 +44,5 @@
         }
     ],
     "outputs": {
-        "domainName": {
-            "type": "string",
-            "value": "[reference('createADController').outputs.domainName.value]"
-        },
-        "virtualNetworkName": {
-            "type": "string",
-            "value": "[reference('createADController').outputs.virtualNetworkName.value]"
-        },
-        "subnetName": {
-            "type": "string",
-            "value": "[reference('createADController').outputs.virtualNetworkSubnetName.value]"
-        },
-        "adUsername": {
-            "type": "string",
-            "value": "[variables('adUsername')]"
-        },
-        "adPassword": {
-            "type": "string",
-            "value": "[variables('adPassword')]"
-        }
     }
 }
